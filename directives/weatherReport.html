@@ -1,0 +1,21 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <button type="button" class="panel-title btn btn-link" data-toggle="collapse" data-target="#{{weatherDay.dt}}">{{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }}   <img ng-src="http://openweathermap.org/img/w/{{weatherDay.weather[0].icon}}.png" /> {{ weatherDay.weather[0].description}}</button>
+    </div>
+    <div class="panel-body collapse" id="{{weatherDay.dt}}">
+        <p>Main: {{ weatherDay.weather[0].main }} </p>
+        <p>Description: {{ weatherDay.weather[0].description}} </p>
+        <p>Daytime temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.day }) }} &deg;C </p>
+        <p>Min temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.min }) }} &deg;C </p>
+        <p>Max temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.max }) }} &deg;C </p>
+        <p>Morning: {{ convertToStandard({ daytimeTemp: weatherDay.temp.morn }) }} &deg;C </p>
+        <p>Evening: {{ convertToStandard({ daytimeTemp: weatherDay.temp.eve }) }} &deg;C </p>
+        <p>Night: {{ convertToStandard({ daytimeTemp: weatherDay.temp.night }) }} &deg;C </p>
+        <p>Pressure: {{ weatherDay.pressure}} hPa </p>
+        <p>Humidity: {{ weatherDay.humidity }} % </p>
+        <p>Wind Speed: {{ weatherDay.speed }} m/s </p>
+        
+    </div>
+</div>
+

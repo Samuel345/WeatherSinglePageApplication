@@ -1,0 +1,31 @@
+<p>
+    <a href="#/" class="whitefont">Back to Search</a>
+</p>
+<div class="text-center">
+    <p class="whitefont">Forecast for {{ city }}.</p>
+    <p class="whitefont">Click the Tab for details on that date</p>
+    <hr />
+        <span class="whitefont">Days: </span>
+
+    <div class="btn-group" role="group" aria-label="...">
+      <a href="#/forecast/2" class="btn btn-default" ng-class="{ 'active': days === '2' }">2</a>
+      <a href="#/forecast/5" class="btn btn-default" ng-class="{ 'active': days === '5' }">5</a>
+      <a href="#/forecast/7" class="btn btn-default" ng-class="{ 'active': days === '7' }">7</a>
+    </div>
+
+    <hr />
+
+
+    <div ng-repeat="w in weatherResult.list" class="blackfont">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                    <weather-report weather-day="w" convert-to-standard="convertToFahrenheit(daytimeTemp)" convert-to-date="convertToDate(dt)" date-format="MMMM d, y"></weather-report>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
